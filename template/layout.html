@@ -6,43 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image" href="images/logo.png">
+    <link rel="stylesheet" href="layout.css">
     <title>Picshare</title>
 </head>
 
 <body> 
 	<!-- HEADER -->
-    <header>
+    <!-- <header class="header"> -->
          <!-- NAV -->
-         <nav class="flex">
+         <!-- <nav class="flex">
             <img class="logo flex" src="images/logo.png" alt="logo-blue-camera-icon">
+            <h1 class="title flex">PICSHARE</h1>
             <div class="menulinks flex">
                 <img src="images/home.png" alt="logo-white-house-home-icon"><a href="home.html"></a>
-                <img src="images/logo.png" alt="logo-white-profile-login-icon"><a href="home.html"></a>
+                <img src="images/userlogin.png" alt="logo-white-profile-login-icon"><a href="download.html"></a>
                 <img src="images/plus.png" alt="logo-white-plus-icon"><a href="upload.html"></a>
              </div>
-         </nav>
-    
-        <div id="title" class="flex">
-            <h1>Picshare</h1>
-        </div>  
-        </header>
+         </nav> -->
+    <nav class="header">
+        <img class="logo flex" src="images/logo.png" alt="logo-blue-camera-icon">
+        <h1 class="title flex">PICSHARE</h1>
+         <div class="menulinks flex">
+            <img src="images/home.png" alt="logo-white-house-home-icon"><a href="home.html"></a>
+            <img src="images/userlogin.png" alt="logo-white-profile-login-icon"><a href="download.html"></a>
+        </div>
+        <div class="uploadbutton flex">
+            <img src="images/plus.png" alt="logo-white-plus-icon"><a href="upload.html"></a>
+        </div>
+    </nav>
     
     <!-- MAIN -->
+    <div class="main"></div>
     {% block content %}{% endblock %}
 
     <!-- FOOTER -->
-    <p class="copyright">© Picshare, 2021. Made with love by Denise, Nathalie, and Thomas.</p>
-    <div class="socialmedia">
-        <img class="linkedin" src="images/" alt="linkedin-icon"><a href="https://www.linkedin.com/in/matrice/"></a>
-        <img class="twitter" src="images/" alt="twitter-icon"><a href="https://www.twitter.com/twitter/ "></a>
-        <img class="instagram" src="images/" alt="instagram-icon"><a href="https://www.instagram.com/instagram/"></a>
-    </div>
-    <div>
-        <img src="images/plus.png" alt="logo-white-plus-icon"><a href="upload.html"></a>
-    </div>
-
+    <footer class="footer">
+        <p class="copyright flex">© Picshare, 2021. Made with love by Denise, Nathalie, and Thomas.</p>
+        <div class="socialmedia flex">
+            <img class="linkedin" src="images/linkedin.png" alt="linkedin-icon"><a href="https://www.linkedin.com/in/matrice/"></a>
+            <img class="instagram" src="images/instagram.png" alt="instagram-icon"><a href="https://www.instagram.com/instagram/"></a>
+            <img class="twitter" src="images/twittter.png" alt="twitter-icon"><a href="https://www.twitter.com/twitter/ "></a>
+        </div>
+        <div class="uploadbutton flex">
+            <img src="images/plus.png" alt="logo-white-plus-icon"><a href="upload.html"></a>
+        </div>
+    </footer>
 </body>
 </html>
