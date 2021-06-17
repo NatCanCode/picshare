@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.flex{
+    display: flex;
+}
+body{
+    background-color: #FEFCFB;
+    font-family: 'Roboto', sans-serif;
+    color: #0A1128;
+    font-style: regular;
+    font-size: clamp(13px, 10vw, 20px);
+    line-height: 1.5;
+    /* convention du web : séparer paragraphes de 1.3 */
+}
+img{
+    /* garder ratio d'une image  */
+    /* border-radius: 3px; */
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+}
+div{
+    height: auto;
+}
+.uploadbutton{
+    border-radius: 45px;
+    height: 40px;
+    width: 60px;
+    border: 1px solid #1282A2;
+    background-color: #1282A2; 
+}
+
+button{
+    border-radius: 5px;
+    border: 1px solid #1282A2;
+    background-color: #1282A2;
+    padding: .4% 3% .4% 3%;
+    /* padding: top right bottom left*/
+    transition: background-color .5s;
+    font-family: 'Roboto', sans-serif;
+    color: #FEFCFB;
+    font-size: clamp(13px, 10vw, 20px);
+    line-height: 30px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+button:hover {
+    color: #1282A2;
+    background-color: #FEFCFB;
+    border: 1px solid #1282A2;
+}
+button a:hover{
+    color: #1282A2 !important;
+}
+p{
+    font-size: clamp(13px, 10vw, 20px);
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h1{
+    font-size: clamp(35px, 7vw, 60px);
+    color: #FEFCFB;
+    letter-spacing: -.2rem;
+}
+a{
+    font-size: clamp(11px, 10vw, 16px);
+}
+footer a{
+    text-decoration: none;
+    color: #0F414F;
+    margin-top: 8%;
+    transition: color .5s;
+}
+
+/* HEADER */
+/* nav a{
+    text-decoration: none;
+    color: #0A1128;
+    margin-left: 5%;
+    transition: color .5s;
+}
+a:hover{
+    color: #0F414F;
+} */
+nav{
+    min-width: 100vw;
+    min-height: 10vh;
+    background-color: #0A1128;
+    padding-left: 3%;
+    padding-right: 3%;
+    display: grid;
+    grid-gap: 5%;
+	grid-template-columns: .5fr 1fr .3fr .1fr;
+	grid-template-rows: 1fr;
+    grid-template-areas:    
+    "logo title menulinks uploadbutton";
+}
+.logo{
+    grid-area: logo;
+    align-self: center;
+}
+.title{
+    grid-area: title;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.menulinks{
+    grid-area: menulinks;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .uploadbutton{
+    grid-area: uploadbutton;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45%;
+}
+
+/* MAIN */
+.main{
+    min-height: 73vh;
+}
+
+/* FOOTER */
+/* button a{
+    color: #0A0402 !important;
+} */
+/* footer a{
+    text-decoration: none;
+    color: #1282A2;
+    margin-top: 8%;
+    transition: color .5s;
+} */
+footer p{
+    color: #FEFCFB;
+    font-size: clamp(11px, 10vw, 16px);
+}
+footer{
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: #0A1128;
+    display: grid;
+    grid-gap: 5%;
+    min-width: 100vw;
+	min-height: 10vh;
+	grid-template-columns: 2fr .4fr .1fr;
+	grid-template-rows: 1fr;
+    grid-template-areas:    
+    "copyright socialmedia uploadbutton";
+}
+.copyright{
+    grid-area: copyright;
+    justify-content: left;
+    align-items: center;
+}
+.socialmedia{
+    grid-area: socialmedia;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer .uploadbutton{
+    grid-area: uploadbutton;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
