@@ -35,7 +35,10 @@ div{
     border: 1px solid #1282A2;
     background-color: #1282A2; 
 }
-
+.uploadbutton:hover{
+    border: 1px solid #FEFCFB;
+    background-color: #0A1128; 
+}
 button{
     border-radius: 5px;
     border: 1px solid #1282A2;
@@ -68,7 +71,7 @@ h1, h2, h3, h4, h5, h6{
     text-transform: uppercase;
 }
 h1{
-    font-size: clamp(35px, 7vw, 60px);
+    font-size: clamp(50px, 7vw, 60px);
     color: #FEFCFB;
     letter-spacing: -.2rem;
 }
@@ -96,14 +99,14 @@ nav{
     min-width: 100vw;
     min-height: 10vh;
     background-color: #0A1128;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding: 1% 3% 1% 3%;
+    /* padding: top right bottom left*/
     display: grid;
     grid-gap: 5%;
 	grid-template-columns: .5fr 1fr .3fr .1fr;
 	grid-template-rows: 1fr;
     grid-template-areas:    
-    "logo title menulinks uploadbutton";
+    "logo title menulinks plus";
 }
 .logo{
     grid-area: logo;
@@ -120,16 +123,21 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-.header .uploadbutton{
-    grid-area: uploadbutton;
+.header .plus{
+    grid-area: plus;
     justify-content: center;
     align-items: center;
-    margin-top: 45%;
+}
+.header .uploadbutton{
+    justify-content: center;
+    align-items: center;
 }
 
 /* MAIN */
 .main{
-    min-height: 73vh;
+    min-height: 50vh;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 /* FOOTER */
@@ -147,8 +155,8 @@ footer p{
     font-size: clamp(11px, 10vw, 16px);
 }
 footer{
-    padding-left: 3%;
-    padding-right: 3%;
+    padding: 1% 3% 3% 3%;
+    /* padding: top right bottom left*/
     background-color: #0A1128;
     display: grid;
     grid-gap: 5%;
@@ -157,21 +165,109 @@ footer{
 	grid-template-columns: 2fr .4fr .1fr;
 	grid-template-rows: 1fr;
     grid-template-areas:    
-    "copyright socialmedia uploadbutton";
+    "copyright socialmedia plus";
 }
 .copyright{
     grid-area: copyright;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 2%;
 }
 .socialmedia{
     grid-area: socialmedia;
     justify-content: space-around;
     align-items: center;
 }
-.footer .uploadbutton{
-    grid-area: uploadbutton;
+.footer .plus{
+    grid-area: plus;
     justify-content: center;
     align-items: center;
-    margin-top: 25%;
+}
+.footer .uploadbutton{
+    justify-content: center;
+    align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 500px){
+    /* HEADER */
+     nav{
+        padding: 2% 4.5% 2% 3%;
+        /* padding: top right bottom left*/
+          display: grid;
+          grid-template-columns: .5fr .5fr .5fr .5fr .5fr;
+          grid-template-rows: 1fr 1.7fr;
+          grid-template-areas:    
+          "logo . . menulinks plus"
+          ". title title title .";
+    }
+
+    /* FOOTER */
+    footer{
+        padding: 3% 5% 0% 3%;
+        /* padding: top right bottom left*/
+        grid-gap: 10%;
+        grid-column-gap: 25%;
+        grid-template-columns: 1fr .5fr;
+        grid-template-rows: 1fr 1.5fr;
+        grid-template-areas:    
+        "socialmedia plus"
+        "copyright copyright";
+    }
+    .socialmedia{
+        grid-area: socialmedia;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .footer .plus{
+        grid-area: plus;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .copyright{
+        grid-area: copyright;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+    }
+}
+@media (min-width: 500px) and (max-width: 750px){
+    /* HEADER */
+    nav{
+        padding: 2% 4.5% 2% 3%;
+        /* padding: top right bottom left*/
+        display: grid;
+        grid-template-columns: .5fr .5fr .5fr .5fr .5fr;
+        grid-template-rows: 1fr 1.7fr;
+        grid-template-areas:    
+        "logo . . menulinks plus"
+        ". title title title .";
+    }
+    
+    /* FOOTER */    
+    footer{
+        padding: 3% 4% 3% 3%;
+        /* padding: top right bottom left*/
+        grid-gap: 10%;
+        grid-column-gap: 35%;
+        grid-template-columns: 1fr .5fr;
+        grid-template-rows: 1fr 1.5fr;
+        grid-template-areas:    
+        "socialmedia plus"
+        "copyright copyright";
+    }
+    .socialmedia{
+        grid-area: socialmedia;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .footer .plus{
+        grid-area: plus;
+        align-items: center;
+    }
+    .copyright{
+        grid-area: copyright;
+        justify-content: center;
+        align-items: center;
+    }
 }
